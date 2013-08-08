@@ -1,0 +1,572 @@
+.hotels-list {
+  .search-form-wrap {
+    .rounded(12px);
+    .gradient(#fea10e, #fe9b04, #ffdd73);
+    .drop-shadow(0, 0, 5px, .5);
+    padding: 10px;
+     
+    h2 {
+      font-family: @elementsFont;
+      font-weight: bold;
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }    
+    .search-form {  
+      padding: 0 0 30px 0;
+      position: relative;
+      
+      label {
+        margin-bottom: 10px;        
+      }
+      
+      input[type="text"] {
+        width: 236px;
+      }
+      
+      button {
+        bottom: -42px;
+      }
+      
+      .item {
+        padding: 0 0 15px;
+      }
+            
+      .dates {
+        width: 100%;
+        
+        input {
+          width: 115px;          
+        }
+        
+        .left {
+          width: 49%;
+          float: left;     
+          margin: 0;
+        }
+        
+        .right {
+          float: right;
+        }
+      }
+      
+      .prices {
+        clear: both;
+        padding: 15px 0 0;
+        color: @fontDeepGray;
+        
+        label {
+          display: block;          
+        }
+        
+        input {
+          width: 79px;
+        }
+      }
+      
+      .stars {
+        padding: 15px 0;
+        
+        ul {
+          height: 16px;          
+          
+          li {
+            display: inline-block;
+            
+            input, a {
+              position: relative;
+              top: 2px;
+              margin-right: 4px;              
+            }
+            
+            label {
+              font-family: @elementsFont;
+              color: @fontDeepOrange;
+              font-size: 16px;
+              font-weight: bold;
+              
+              .stars {
+                display: inline-block;
+                background: url('@{imgsRoot}/search-form-stars.png') 0 0 repeat-x;
+                height: 16px;
+                padding: 0;
+                position: relative;
+                top: 4px;
+                margin: 0 4px 0 2px;                
+                
+                &.stars-2 {
+                  width: 14px;
+                }
+                &.stars-3 {
+                  width: 21px;
+                }          
+                &.stars-4 {
+                  width: 28px;
+                }          
+                &.stars-5 {
+                  width: 35px;
+                }                            
+              }
+            }
+          }
+        }
+      }
+      
+      select {
+        width: 249px;
+      }
+      
+      .persons {
+        .clear;
+        
+        a {
+          text-decoration: none;
+          .transition(.2s, ease);
+          
+          &:hover {
+            opacity: .8;
+          }         
+          
+          img {
+            display: inline-block;
+          }
+        }
+        
+        .parents {
+          float: left;
+          position: relative;
+          width: 100px;
+          
+          .increase, .decrease {
+            position: absolute;
+            top: 10px;            
+          }
+          
+          .increase {
+            left: 0;
+          }
+          
+          .decrease {
+            right: 0;
+          }
+          
+          .icon {
+            position: absolute;
+            left: 50%;
+            margin: 0 0 0 -14px;
+          }
+        }
+        
+        .result {
+          margin-top: 55px;
+          text-align: center;
+        }
+        
+        .children {
+          float: right;
+          width: 100px;
+          position: relative;
+          width: 100px;          
+          
+          .increase, .decrease {
+            position: absolute;
+            top: 10px;            
+          }
+          
+          .increase {
+            left: 0;
+          }
+          
+          .decrease {
+            right: 0;
+          }
+          
+          .icon {
+            position: absolute;
+            left: 50%;
+            margin: 0 0 0 -14px;
+            top: 10px;
+          }          
+        }
+        
+        .children-age {
+          display: none;
+        }
+      }
+    } 
+  }  
+  
+  .top-filter {
+    .clear;
+    
+    .sort {
+      float: left;
+      line-height: 32px;
+      margin-bottom: 20px;
+      
+      .title {
+        color: @fontLightOrange;
+        font-size: 17px;
+        font-family: @elementsFont;
+        font-weight: bold;
+        float: left;
+        margin-right: 20px;
+      }
+      
+      ul {
+        float: right;        
+        
+        li {
+          display: inline-block;
+          
+          &.active {
+            .gradient(#fe9c06, #fe9c06, #ffdd73);
+            .rounded(4px);
+            
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }            
+          }
+          
+          a {
+            color: @fontLightOrange;
+            font-size: 16px;
+            padding: 0 15px;                       
+            display: block;
+            height: 32px;
+            line-height: 32px;
+            
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    
+    .links {
+      float: right;
+      line-height: 32px;
+      
+      .favorites {
+        color: @fontGreen;
+        display: inline-block;
+        padding-left: 20px;
+        background: url('@{imgsRoot}/control-panel-fav.png') 0 center no-repeat;
+        font-size: 12px;
+      }
+    }
+    
+    .pagination {
+      clear: both;
+      float: left;
+    }
+    
+    .show-per-page-button {
+      float: right;
+    }
+  }
+  
+  .hotels-wrap {
+    .item {
+      .gradient(#f7f4f2, #ffffff, #f4f0ed);
+      .rounded(12px);
+      margin-top: 20px;
+      padding: 30px 190px 10px 15px;
+      overflow: hidden;
+      position: relative;
+      
+      .left {
+        float: left;
+        width: 190px;
+        padding-bottom: 30px;
+        
+        img {
+          max-width: 174px;
+          display: block;
+          border: 1px solid #ffffff;
+        }        
+      }
+      
+      .right {
+        margin-left: 190px;
+      }
+
+      .title {
+        overflow: hidden;
+        line-height: 16px;
+        .stars-wrap {
+          float: left;
+          font-family: @elementsFont;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fe9c04;
+          margin-left: 0;
+          span {
+            background: url('@{imgsRoot}/hotel-item-stars.png') 0 0 repeat-x;
+            display: inline-block;
+            height: 15px;
+            position: relative;
+            top: -2px;
+            font-size: 0;
+            margin-left: -2px;
+            
+            &.stars-3 {
+              width: 39px;
+            }
+            
+            &.stars-4 {
+              width: 52px;            
+            }
+            
+            &.stars-5 {
+              width: 65px;
+            }
+          }
+        }
+      }
+
+      h3 {
+        float: left;
+        margin-right: 10px;
+        
+        a {
+          font-family: @elementsFont;
+          font-size: 17px;
+          font-weight: bold;
+          color: #000000;
+        }
+      }  
+      
+      .description {
+        margin-top: 15px;
+        font-size: 14px;        
+        padding-bottom: 70px;
+        
+        p {
+          line-height: 18px;
+          
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }    
+            
+      .floating-lb-block {
+        position: absolute;
+        bottom: 15px;
+        left: 205px;
+        
+        .address {
+          font-size: 12px;
+          color: @fontDeepGray;
+        }
+        
+        .metro {
+          margin: 2px 0 0 0;
+          font-size: 12px;
+          color: @fontDeepGray;
+          padding: 0 0 0 22px;
+          line-height: 15px;
+          background: url('@{imgsRoot}/icon-metro.png') left center no-repeat;
+        }
+        
+        .show-on-map {
+          display: inline-block;
+          font-size: 12px;
+          color: @fontOrange;
+          margin-top: 3px;
+        }        
+      }
+      
+      .price {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-family: @elementsFont;
+        font-size: 18px;
+        
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        
+        .label {
+          display: table-cell;
+          vertical-align: middle;
+          height: 44px;
+          font-size: 12px;
+          color: @fontOrange;
+          font-weight: bold;
+          width: 85px;
+          text-align: right;
+        }
+        
+        .value {
+          display: table-cell;
+          vertical-align: middle;
+          height: 44px;
+        }        
+      }
+      
+      .floating-rb-block {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;     
+        
+        .rating {          
+          float: right;
+          text-align: right;
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 22px;
+          font-family: @elementsFont;      
+          
+          img {
+            position: relative;
+            top: 4px;
+            margin-right: 5px;            
+          }    
+        }   
+        
+        .reviews-link {
+          clear: both;
+          float: right;
+          display: block;
+          font-family: @elementsFont;
+          color: #000000;
+          font-size: 12px;
+          font-weight: bold;
+          margin-top: 3px;
+          text-decoration: none;
+        }
+        
+        .add-to-favorites {        
+          clear: both;
+          float: right;                        
+          margin: 10px 0;
+          .gradient(#fec708, #fec708, #ffe691);
+          .drop-shadow(0, 3px, 6px, .2);
+          .rounded(24px);        
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+          text-align: center;
+          line-height: 20px;
+          display: block;
+          width: 130px;
+          height: 20px;
+          color: #ffffff;
+          font-family: @elementsFont;
+          font-size: 14px;
+          font-weight: bold;
+          text-decoration: none;
+          border: 2px solid #ffffff;
+        
+          img {
+            display: inline-block;
+            margin-right: 3px;
+            position: relative;
+            top: 1px;
+          }      
+        }
+        
+        .read-more {
+          clear: both;
+          float: right;
+          padding-right: 15px;
+          font-size: 11px;
+          margin-top: 5px;
+          background: url('@{imgsRoot}/read-more.png') right 2px no-repeat;
+          color: #000000;
+        }
+      }
+      
+      &.best {
+        .gradient(#ede1d6, #ebded1, #f7f1ec);
+        .drop-shadow(0, 0, 5px, .42);
+        border: 1px solid #fbf7f3;  
+        border-top: none;
+        
+        .price {                    
+          .value {
+            padding-left: 15px;
+            vertical-align: bottom;
+            
+            span {
+              font-weight: bold;              
+            }
+            
+            .new {
+              font-weight: normal;
+              position: relative;
+              top: 2px;
+              
+              span {              
+                font-weight: bold;  
+              }
+            }
+                        
+            .old {
+              text-decoration: line-through;
+              color: @fontDeepGray;
+              font-size: 12px;
+              display: block;
+            }
+          }
+        }
+        
+        .left {
+          img {
+            border: 1px solid #fea00d;
+          }
+        }
+      }
+    }
+  }
+}
+
+.show-per-page-button {
+  position: relative;
+  
+  .active {
+    .rounded(4px);
+    .inner-shadow(2px, 2px, 3px, .15);
+    display: block;
+    width: 165px;
+    padding: 0 25px 0 10px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #b0b0b0;   
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px; 
+    background: url('@{imgsRoot}/show-per-page.png') 100% 0 no-repeat;
+  }
+  
+  ul {
+    display: none;
+    position: absolute;
+    width: 165px;
+    padding: 5px 25px 10px 10px;
+    top: 25px;
+    background: #ffffff;
+    .drop-shadow(2px, 2px, 3px, .15);
+    .rounded(0 0 4px 4px);
+    border: 1px solid #b0b0b0;
+    z-index: 3;
+    
+    a {
+      display: block;
+      .transition(.2s, ease);
+      font-size: 14px;
+      color: #000000;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 3px 0;
+      
+      &:hover {
+        color: @fontDeepGray;
+      }
+    }
+  } 
+}
