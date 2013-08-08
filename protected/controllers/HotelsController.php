@@ -22,6 +22,16 @@ class HotelsController extends Controller
         };
         $get['stars'] = $stars;
 
+        if (!isset ($_GET['per_page']))
+        {
+            $per_page = 10;
+            $get['per_page'] = $per_page;
+        }
+        else
+        {
+            $per_page = $_GET['per_page'];
+        }
+
         if( !isset($_GET['page']) )
         {
             $start_row = 0;
@@ -30,7 +40,7 @@ class HotelsController extends Controller
         }
         else
         {
-            $start_row = ($_GET['page'] - 1) * $_GET['per_page'];
+            $start_row = ($_GET['page'] - 1) * $per_page;
             $get['start_row'] = $start_row;
         }
 
@@ -42,7 +52,7 @@ class HotelsController extends Controller
             'checkin'=>$_GET['date_checkin'],
             'order'=>$_GET['order'],
             'start_row'=>$start_row,
-            'per_page'=>$_GET['per_page'],
+            'per_page'=>$per_page,
         ));
         // Колличество отелей удовлетворяющих условию (необходимо для пагинации)
 
@@ -54,7 +64,7 @@ class HotelsController extends Controller
             'checkin'=>$_GET['date_checkin'],
             'order'=>$_GET['order'],
         ));
-        $pages = ceil($countHotels / $_GET['per_page']);
+        $pages = ceil($countHotels / $per_page);
 
         $this->render('search', array(
             'hotels'=>$hotels,
