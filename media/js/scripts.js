@@ -270,7 +270,7 @@ $(document).ready(function () {
         var $this = $(this);
         var id = $this.attr('hotelId');
         $.post(
-            "/hotels/favorites",
+            "/hotels/addtofavorites",
             {
             id: id
             },
